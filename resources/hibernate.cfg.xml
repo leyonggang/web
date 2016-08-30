@@ -1,0 +1,18 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory name="foo">
+		<property name="show_sql">true</property>
+		<property name="connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+		<property name="connection.url">jdbc:sqlserver://localhost:1433;databaseName=app</property>
+		<property name="connection.username">sa</property>
+		<property name="connection.password">sgf111116</property>
+		<property name="dialect">org.hibernate.dialect.SQLServerDialect</property>
+		<property name="hbm2ddl.auto">update</property>
+		<property name="connection.autocommit">true</property>
+		
+		<mapping resource="cn/ayit/bo/User.hbm.xml"/>
+	</session-factory>
+</hibernate-configuration>

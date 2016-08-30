@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping  package="cn.ayit.bo">
+
+	<class name="User" table="AuctionUser" lazy="true">
+
+		<id name="id"><generator class="native"></generator></id>
+		<property name="username"></property>
+		
+		<property name="password"/>
+		<property name="age"/>
+		<property name="birth"/>
+		
+	</class>
+	
+</hibernate-mapping>
