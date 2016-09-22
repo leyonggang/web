@@ -1,13 +1,9 @@
-package cn.ayit.action;
+package cn.ayit.bo;
 
 import java.util.Date;
 
-import com.opensymphony.xwork2.ActionSupport;
+public class User {
 
-import cn.ayit.bo.User;
-
-public class Login extends ActionSupport {
-	
 	private String username;
 	private String password;
 	private int age;
@@ -31,27 +27,19 @@ public class Login extends ActionSupport {
 	public void setAge(int age) {
 		this.age = age;
 	}
+	
 	public Date getBirth() {
 		return birth;
 	}
 	public void setBirth(Date birth) {
 		this.birth = birth;
 	}
-
-
 	@Override
-	public String execute() throws Exception {
-		
-		System.out.println(username);
-		System.out.println(password);
-		System.out.println(age);
-		System.out.println(birth);
-		
-		if(password.equals("11")){
-			return super.execute();
-		}else{
-			return ERROR;
-		}
+	public String toString() {
+		return "User [username=" + username + ", password=" + password + ", age=" + age + ",birth="
+				+ birth + "]";
 	}
-
+	
+	
+	
 }
