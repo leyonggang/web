@@ -4,12 +4,27 @@
 <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
 
 <package name="testStruts2" namespace="/" extends="struts-default">
+
+<interceptors>
+<interceptor name="permission" class="cn.ayit.interceptor.TestInterceptor"></interceptor>
+      <interceptor-stack name="permissionStack">
+		<interceptor-ref name="defaultStack"/>
+		<interceptor-ref name="permission"/>
+      </interceptor-stack>
+</interceptors>
+
+
 		<action name="login" class="cn.ayit.action.Login">
 			<result name="success">success.jsp</result>
 			<result name="error" type="redirect">error.jsp</result>
 		</action>
 		<action name="regist" class="cn.ayit.action.Regist">
 			<result name="success">success.jsp</result>
+		</action>
+		<action name="registModel" class="cn.ayit.action.RegistModel">
+			<result name="success">success.jsp</result>
+			<result name="input">input.jsp</result>
+			<interceptor-ref name="permissionStack"></interceptor-ref>
 		</action>
 </package>
 </struts>
